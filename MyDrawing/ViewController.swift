@@ -55,7 +55,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     }
     @IBAction func btnPen(_ sender: UIButton) {
         if Pen.isSelected {
-            
+            //popover -> 슬라이더로 펜 크기 조절하기
         }
         else {
             Pen.isSelected = true
