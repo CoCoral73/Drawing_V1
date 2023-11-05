@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     @IBOutlet var Undo: UIBarButtonItem!
     @IBOutlet var Redo: UIBarButtonItem!
     @IBOutlet var imgView: UIImageView!
@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var Eraser: UIButton!
     @IBOutlet var ColorWell: UIColorWell!
     
-    var lineWidth: CGFloat = 2.0
+    var lineWidth: CGFloat = 5.0
     var lineColor = UIColor.black.cgColor
     var history = [UIImage]()
     var now = -1
@@ -54,10 +54,16 @@ class ViewController: UIViewController {
         if now + 1 == history.count { Redo.isEnabled = false }
     }
     @IBAction func btnPen(_ sender: UIButton) {
-        Pen.isSelected = true
-        Eraser.isSelected = false
-        
-        lineColor = ColorWell.selectedColor!.cgColor
+        if Pen.isSelected {
+            
+        }
+        else {
+            Pen.isSelected = true
+            Eraser.isSelected = false
+            
+            lineColor = ColorWell.selectedColor!.cgColor
+            lineWidth = 5.0
+        }
     }
     @IBAction func btnEraser(_ sender: UIButton) {
         Pen.isSelected = false
