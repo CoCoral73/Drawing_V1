@@ -1,5 +1,5 @@
 //
-//  PopoverViewController.swift
+//  EraserPopoverViewController.swift
 //  MyDrawing
 //
 //  Created by 김정원 on 2023/11/06.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class PenPopoverViewController: UIViewController {
+class EraserPopoverViewController: UIViewController {
+    var actAll: (() -> Void)?
     var act1: (() -> Void)?
     var act2: (() -> Void)?
     var act3: (() -> Void)?
@@ -20,7 +21,7 @@ class PenPopoverViewController: UIViewController {
     @IBOutlet var btn4: UIButton!
     @IBOutlet var btn5: UIButton!
     
-    var lineWidthSelected = [false, false, true, false, false]
+    var lineWidthSelected = [true, false, false, false, false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,10 @@ class PenPopoverViewController: UIViewController {
         btn5.isSelected = lineWidthSelected[4]
     }
 
+    @IBAction func eraseAll(_ sender: UIButton) {
+        actAll?()
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func width1(_ sender: UIButton) {
         act1?()
         btn1.isSelected = true

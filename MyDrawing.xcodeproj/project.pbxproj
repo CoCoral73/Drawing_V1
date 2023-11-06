@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		903AA6C82AF917F9005A7F2B /* PenPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA6C62AF917F9005A7F2B /* PenPopoverViewController.swift */; };
 		903AA6C92AF917F9005A7F2B /* PenPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 903AA6C72AF917F9005A7F2B /* PenPopoverViewController.xib */; };
+		903AA6CC2AF92C5A005A7F2B /* EraserPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA6CA2AF92C5A005A7F2B /* EraserPopoverViewController.swift */; };
+		903AA6CD2AF92C5A005A7F2B /* EraserPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 903AA6CB2AF92C5A005A7F2B /* EraserPopoverViewController.xib */; };
 		9094D6192AF784F900DC5434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9094D6182AF784F900DC5434 /* AppDelegate.swift */; };
 		9094D61B2AF784F900DC5434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9094D61A2AF784F900DC5434 /* SceneDelegate.swift */; };
 		9094D61D2AF784F900DC5434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9094D61C2AF784F900DC5434 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		903AA6C62AF917F9005A7F2B /* PenPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenPopoverViewController.swift; sourceTree = "<group>"; };
 		903AA6C72AF917F9005A7F2B /* PenPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PenPopoverViewController.xib; sourceTree = "<group>"; };
+		903AA6CA2AF92C5A005A7F2B /* EraserPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraserPopoverViewController.swift; sourceTree = "<group>"; };
+		903AA6CB2AF92C5A005A7F2B /* EraserPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EraserPopoverViewController.xib; sourceTree = "<group>"; };
 		9094D6152AF784F900DC5434 /* MyDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9094D6182AF784F900DC5434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9094D61A2AF784F900DC5434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				9094D6262AF784FA00DC5434 /* Info.plist */,
 				903AA6C62AF917F9005A7F2B /* PenPopoverViewController.swift */,
 				903AA6C72AF917F9005A7F2B /* PenPopoverViewController.xib */,
+				903AA6CA2AF92C5A005A7F2B /* EraserPopoverViewController.swift */,
+				903AA6CB2AF92C5A005A7F2B /* EraserPopoverViewController.xib */,
 			);
 			path = MyDrawing;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903AA6CD2AF92C5A005A7F2B /* EraserPopoverViewController.xib in Resources */,
 				903AA6C92AF917F9005A7F2B /* PenPopoverViewController.xib in Resources */,
 				9094D6252AF784FA00DC5434 /* LaunchScreen.storyboard in Resources */,
 				9094D6222AF784FA00DC5434 /* Assets.xcassets in Resources */,
@@ -149,6 +156,7 @@
 				9094D61D2AF784F900DC5434 /* ViewController.swift in Sources */,
 				9094D6192AF784F900DC5434 /* AppDelegate.swift in Sources */,
 				9094D61B2AF784F900DC5434 /* SceneDelegate.swift in Sources */,
+				903AA6CC2AF92C5A005A7F2B /* EraserPopoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
