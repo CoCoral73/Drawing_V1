@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		903AA6C82AF917F9005A7F2B /* PenPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA6C62AF917F9005A7F2B /* PenPopoverViewController.swift */; };
+		903AA6C92AF917F9005A7F2B /* PenPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 903AA6C72AF917F9005A7F2B /* PenPopoverViewController.xib */; };
 		9094D6192AF784F900DC5434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9094D6182AF784F900DC5434 /* AppDelegate.swift */; };
 		9094D61B2AF784F900DC5434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9094D61A2AF784F900DC5434 /* SceneDelegate.swift */; };
 		9094D61D2AF784F900DC5434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9094D61C2AF784F900DC5434 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		903AA6C62AF917F9005A7F2B /* PenPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenPopoverViewController.swift; sourceTree = "<group>"; };
+		903AA6C72AF917F9005A7F2B /* PenPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PenPopoverViewController.xib; sourceTree = "<group>"; };
 		9094D6152AF784F900DC5434 /* MyDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9094D6182AF784F900DC5434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9094D61A2AF784F900DC5434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				9094D6212AF784FA00DC5434 /* Assets.xcassets */,
 				9094D6232AF784FA00DC5434 /* LaunchScreen.storyboard */,
 				9094D6262AF784FA00DC5434 /* Info.plist */,
+				903AA6C62AF917F9005A7F2B /* PenPopoverViewController.swift */,
+				903AA6C72AF917F9005A7F2B /* PenPopoverViewController.xib */,
 			);
 			path = MyDrawing;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903AA6C92AF917F9005A7F2B /* PenPopoverViewController.xib in Resources */,
 				9094D6252AF784FA00DC5434 /* LaunchScreen.storyboard in Resources */,
 				9094D6222AF784FA00DC5434 /* Assets.xcassets in Resources */,
 				9094D6202AF784F900DC5434 /* Main.storyboard in Resources */,
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903AA6C82AF917F9005A7F2B /* PenPopoverViewController.swift in Sources */,
 				9094D61D2AF784F900DC5434 /* ViewController.swift in Sources */,
 				9094D6192AF784F900DC5434 /* AppDelegate.swift in Sources */,
 				9094D61B2AF784F900DC5434 /* SceneDelegate.swift in Sources */,

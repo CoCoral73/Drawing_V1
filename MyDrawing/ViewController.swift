@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class ViewController: UIViewController {
     @IBOutlet var Undo: UIBarButtonItem!
     @IBOutlet var Redo: UIBarButtonItem!
     @IBOutlet var imgView: UIImageView!
@@ -15,7 +15,9 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     @IBOutlet var Eraser: UIButton!
     @IBOutlet var ColorWell: UIColorWell!
     
-    var lineWidth: CGFloat = 5.0
+    var lineWidth: CGFloat = 3.0
+    var lineWidthSelected = [false, false, true, false, false]
+    var lastLineWidth: CGFloat = 3.0
     var lineColor = UIColor.black.cgColor
     var history = [UIImage]()
     var now = -1
@@ -55,15 +57,36 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     }
     @IBAction func btnPen(_ sender: UIButton) {
         if Pen.isSelected {
-            //popover -> 슬라이더로 펜 크기 조절하기
+            let PVC = PenPopoverViewController()
+            PVC.lineWidthSelected = lineWidthSelected
+            PVC.act1 = { [weak self] in self?.lineWidth = 1.0; (0...4).forEach { self!.lineWidthSelected[$0] = false; self!.lineWidthSelected[0] = true }; self!.lastLineWidth = 1.0 }
+            PVC.act2 = { [weak self] in self?.lineWidth = 2.0; (0...4).forEach { self!.lineWidthSelected[$0] = false; self!.lineWidthSelected[1] = true }; self!.lastLineWidth = 2.0 }
+            PVC.act3 = { [weak self] in self?.lineWidth = 3.0; (0...4).forEach { self!.lineWidthSelected[$0] = false; self!.lineWidthSelected[2] = true }; self!.lastLineWidth = 3.0 }
+            PVC.act4 = { [weak self] in self?.lineWidth = 4.0; (0...4).forEach { self!.lineWidthSelected[$0] = false; self!.lineWidthSelected[3] = true }; self!.lastLineWidth = 4.0 }
+            PVC.act5 = { [weak self] in self?.lineWidth = 5.0; (0...4).forEach { self!.lineWidthSelected[$0] = false; self!.lineWidthSelected[4] = true }; self!.lastLineWidth = 5.0 }
+            
+            PVC.view.backgroundColor = UIColor.white
+            PVC.preferredContentSize = CGSize(width: 300, height: 60)
+            PVC.modalPresentationStyle = .popover
+            if let pres = PVC.presentationController {
+                pres.delegate = self
+            }
+            
+            self.present(PVC, animated: true)
+            if let popover = PVC.popoverPresentationController {
+                popover.sourceView = sender
+                popover.sourceRect = sender.bounds
+                popover.permittedArrowDirections = .down
+            }
         }
         else {
             Pen.isSelected = true
             Eraser.isSelected = false
             
             lineColor = ColorWell.selectedColor!.cgColor
-            lineWidth = 5.0
+            lineWidth = lastLineWidth
         }
+        
     }
     @IBAction func btnEraser(_ sender: UIButton) {
         Pen.isSelected = false
@@ -130,3 +153,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     }
 }
 
+extension UIViewController: UIPopoverPresentationControllerDelegate {
+    public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
+    }
+}
