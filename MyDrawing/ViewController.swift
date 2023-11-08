@@ -119,7 +119,6 @@ class ViewController: UIViewController {
             Pen.isSelected = false
             Eraser.isSelected = true
             
-            lineColor = UIColor.systemBackground.cgColor
             lineWidth = lastEraserWidth
         }
     }
@@ -133,7 +132,8 @@ class ViewController: UIViewController {
         if firstPoint.y <= 0 || firstPoint.y >= imgView.frame.height { return }
         UIGraphicsBeginImageContext(imgView.frame.size)
         let context = UIGraphicsGetCurrentContext()!
-        context.setStrokeColor(lineColor)
+        if Eraser.isSelected { context.setBlendMode(.clear) }
+        else { context.setStrokeColor(lineColor) }
         context.setLineCap(CGLineCap.round)
         context.setLineWidth(lineWidth)
         
@@ -155,7 +155,8 @@ class ViewController: UIViewController {
         if firstPoint.y <= 0 || firstPoint.y >= imgView.frame.height { return }
         UIGraphicsBeginImageContext(imgView.frame.size)
         let context = UIGraphicsGetCurrentContext()!
-        context.setStrokeColor(lineColor)
+        if Eraser.isSelected { context.setBlendMode(.clear) }
+        else { context.setStrokeColor(lineColor) }
         context.setLineCap(CGLineCap.round)
         context.setLineWidth(lineWidth)
         
@@ -167,7 +168,7 @@ class ViewController: UIViewController {
         
         imgView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         if now + 1 == history.count {
             history.append(imgView.image!)
         }
